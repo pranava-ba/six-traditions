@@ -107,46 +107,6 @@ Temples are also tagged by **Naadu** (historical region), reflecting the ancient
 
 ---
 
-## Running Locally
-
-```bash
-pip install -r requirements.txt
-streamlit run streamlit_app.py
-```
-
-Open `http://localhost:8501`
-
----
-
-## Deploying to Streamlit Cloud (Free)
-
-1. Push this folder to a GitHub repository
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Click **New app** → select your repo → set main file to `streamlit_app.py`
-4. Deploy — you get a public URL instantly
-
----
-
-## File Structure
-
-```
-six-traditions-app/
-├── streamlit_app.py        ← Main app (chat UI + map)
-├── requirements.txt        ← Python dependencies
-├── temples.db              ← SQLite: 271 Shaivam temples + flagged table
-├── aliases.json            ← Fuzzy alias map (districts, cities, naadu, gnana)
-├── pincode_data.csv        ← India Post pincode database (165k records, lat/lon)
-└── chatbot/
-    ├── db.py               ← SQLite read/write + session management
-    ├── resolver.py         ← Pincode / DIGIPIN / name → lat/lon
-    ├── router.py           ← Haversine filter + TSP route optimisation
-    ├── formatter.py        ← Message formatting
-    ├── conversation.py     ← 5-state conversation engine
-    └── main.py             ← FastAPI webhook (for future WhatsApp integration)
-```
-
----
-
 ## Data Sources
 
 - **Temple data** — compiled from primary research across Tamil Nadu and beyond
@@ -167,4 +127,4 @@ six-traditions-app/
 | Kaumaram | — | Pending |
 | Sowram | — | Pending |
 
-WhatsApp API integration is the final step, after MVP validation on Streamlit.
+
