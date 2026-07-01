@@ -125,7 +125,7 @@ def handle(session_id: str, text: str) -> list[str]:
             return [formatter.no_temples_message(radius, origin["label"])]
 
         route  = router.optimise_route(pool, origin["lat"], origin["lon"])
-        state  = {"step": "RESULTS", "origin": origin, "route": route, "radius_km": radius}
+        state  = {"step": "RESULTS", "origin": origin, "pool": pool, "route": route, "radius_km": radius}
         db.save_session(session_id, state)
         return formatter.itinerary_messages(origin, route)
 
